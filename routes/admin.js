@@ -3,9 +3,9 @@ const Router=express.Router();
 
 Router.get('/',(req,res)=>{
     res.send(`
-    <form action='/add-product method='POST'>
-    <input type='text'>
-    <button type=submit>submit</button>
+    <form action='/admin/add-product' method='POST'>
+    <input type='text' name='nn'>
+    <button >submit</button>
     </form>
     `)
 })
