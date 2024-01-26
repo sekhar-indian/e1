@@ -1,18 +1,9 @@
 const express=require('express');
 const app=express();
+const admin=require('./routes/admin');
 
-app.use('/',(rer,res,next)=>{
-    console.log('/');
-    res.send('<h1>hi</h1>')
-    next();
-});
-
-app.use('/add',(req,res,next)=>{
-    console.log('/add');
-    next();
-});
-app.use('/',(req,res,next)=>{
-    console.log('2/');
-    next();
+app.use(admin)
+app.use((req,res,nexr)=>{
+    res.status(404).send('<h1>Page not found</h1>')
 })
 app.listen(3000);
