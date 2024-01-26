@@ -1,7 +1,8 @@
 const express=require('express');
 const app=express();
 const router=require('./routes/admin');
-
+const bodyparser=require('body-parser')
+app.use(bodyparser.urlencoded({extended:false}))
 app.use(router);
 
 app.use((req,res,next)=>{
