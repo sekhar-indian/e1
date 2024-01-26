@@ -1,17 +1,24 @@
 const express=require('express');
 const Router=express.Router();
-
-Router.get('/',(req,res)=>{
+Router.get('/login',(req,res)=>{
     res.send(`
-    <form action='/admin/add-product' method='POST'>
-    <input type='text' name='nn'>
-    <button >submit</button>
+    <form action='/' method='POST'>
+    <input type='text' name='name'>
+    <button>login</button>
     </form>
     `)
 })
 
-Router.post('/add-product',(req,res)=>{
-    res.send('<h1>welcome</h1>')
+Router.post('/',(req,res)=>{
+    res.send(`
+    <form action='/' method='POST'>
+    <input type='text' >
+    <button>submit</button>
+    </form>
+    `)
+    req.send()
 })
-
+Router.get('/w',(req,res)=>{
+    res.send('<h1>hi</h1>')
+})
 module.exports=Router;
